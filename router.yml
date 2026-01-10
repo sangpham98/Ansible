@@ -1,6 +1,6 @@
 ---
 - name: Set Ip Loobpack
-  hosts: all
+  hosts: Router
   gather_facts: no
 
   tasks:
