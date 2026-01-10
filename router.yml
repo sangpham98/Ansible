@@ -1,6 +1,6 @@
 ---
 - name: Set Ip Loobpack
-  hosts: Router
+  hosts: R2-SANG
   gather_facts: no
 
   tasks:
