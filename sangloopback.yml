@@ -1,6 +1,6 @@
 ---
 - name: dat ip cho loopback
-  hosts: Router
+  hosts: R2-SANG
   gather_facts: no
 
   tasks:
