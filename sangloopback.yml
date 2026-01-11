@@ -1,17 +1,15 @@
 ---
 - name: dat ip cho loopback
-  hosts: R2-SANG
+  hosts: Router25P104
   gather_facts: no
 
   tasks:
     - name: Set loopback IPv4 address
       ios_l3_interface:
         name: Loopback{{ item.name }}
-        ipv4: 10.0.{{ item.number }}.1/24
+        ipv4: 7.7.{{ item.number }}.7/24
       with_items:
-        - { name: "0", number: 0 }
-        - { name: "1", number: 1 }
-        - { name: "2", number: 2 }  
+        - { name: "0", number: 7 }
 
     - name: Set Ethernet0/2 IPv4 address
       ios_l3_interface:
