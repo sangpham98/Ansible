@@ -1,0 +1,24 @@
+---
+- name: Xoa cac interface loopback 0 1 2 va kiem tra
+  hosts: R2-SANG
+  gather_facts: no
+
+  tasks:
+    - name: Remove loopback interfaces
+      ios_interface:
+        name: Loopback{{ item }}
+        state: absent
+      with_items:
+        - 0
+        - 1
+        - 2
+
+    - name: Show ip interface brief
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: show_ip
+
+    - name: Debug show ip interface brief
+      debug:
+        var: show_ip.stdout_lines
